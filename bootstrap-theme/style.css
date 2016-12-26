@@ -1,0 +1,75 @@
+/*
+	Theme Name: Bootstrap
+	Version: 1.0
+	Author: Connor Greene
+*/
+
+body {
+	margin-bottom: 70px;
+	word-wrap: break-word;
+}
+h1, h3, h4, p, li {
+	font-family: 'Open Sans', Arial;
+}
+img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+mark {
+	padding: .2em;
+	background: #FFF59D;
+	color: #000;
+}
+.panel h3 {
+	margin-top: 5px;
+}
+.navbar .navbar-brand img {
+	margin-top: -15px;
+	margin-bottom: -15px;
+	height: 50px;
+	width: 150px;
+	max-width: 100%;
+}
+.jumbotron h1 {
+	padding-top: 10%;
+	padding-bottom: 10%;
+	font-weight: 700;
+	color: white;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	letter-spacing: 1px;
+}
+.jumbotron {
+	background-position: center;
+	background-size: cover;
+	margin-top: -25px;
+	background-repeat: no-repeat;
+	background-color: white;
+}
+/* fix for collapsing navbar */
+@media (min-width: 768px) and (max-width: 991px) {
+	.navbar-collapse.collapse {
+		display: none !important;
+	}
+	.navbar-collapse.collapse.in {
+		display: block !important;
+	}
+	.navbar-header .collapse, .navbar-toggle {
+		display: block !important;
+	}
+	.navbar-header {
+		float: none;
+	}
+}
+/* fix images and image on home page when the screen is big enough */
+@media only screen and (min-width: 768px) {
+	img {
+		max-width: 75%;
+	}
+	.jumbotron {
+		background-size: contain;
+	}
+	body {
+		font-size: 16px;
+	}
+}
