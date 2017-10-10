@@ -7,10 +7,6 @@
 
 	<link rel="icon" type="image/png" href="<?php echo wp_get_attachment_url(get_option('favicon_option')); ?>" />
 
-	<link href="<?php echo bloginfo('template_directory') . '/css/bootstrap.min.css'; ?>" rel="stylesheet" type="text/css">
-	<link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
-
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -34,14 +30,13 @@
 
 				<?php
 				wp_nav_menu( array(
-					'menu'              => 'primary',
-					'theme_location'    => 'primary',
-					'depth'             => 2,
-					'menu_class'        => 'nav navbar-nav navbar-right',
-					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-					'walker'            => new wp_bootstrap_navwalker())
-				);
-				?>
+					'menu'			=> 'primary',
+					'theme_location'	=> 'primary',
+					'depth'			=> 2,
+					'menu_class'		=> 'nav navbar-nav navbar-right',
+					'fallback_cb'		=> 'wp_bootstrap_navwalker::fallback',
+					'walker'		=> new wp_bootstrap_navwalker()
+				) ); ?>
 
 			</div>
 

@@ -8,24 +8,20 @@ function add_theme_options_menu() {
 	add_menu_page("Theme Options", "Theme Options", "manage_options", "theme_options", "theme_settings_page");
 }
 
-function theme_settings_page() {
-	?>
+function theme_settings_page() { ?>
 	<div class="wrap">
 		<h1>Theme Options</h1>
 		<form method="post" action="options.php">
 			<?php
 			settings_fields("section");
 			do_settings_sections("theme_options");
-			submit_button();
-			?>
+			submit_button(); ?>
 		</form>
 	</div>
 	<?php
 }
 
 function display_theme_options_fields() {
-	wp_enqueue_media();
-
 	add_settings_section("section", "All Settings", null, "theme_options");
 
 	add_settings_field("site_logo", "Site Logo", "display_logo_element", "theme_options", "section");
@@ -39,8 +35,7 @@ function display_theme_options_fields() {
 	register_setting("section", "home_text_option");
 }
 
-function display_logo_element() {
-	?>
+function display_logo_element() { ?>
 	<div class='image-preview-wrapper'>
 		<img id='logo-preview' src='<?php echo wp_get_attachment_url(get_option('site_logo_option')); ?>' height='100'>
 	</div>
@@ -49,8 +44,7 @@ function display_logo_element() {
 	<?php
 }
 
-function display_background_element() {
-	?>
+function display_background_element() { ?>
 	<div class='image-preview-wrapper'>
 		<img id='background-preview' src='<?php echo wp_get_attachment_url(get_option('background_image_option')); ?>' height='100'>
 	</div>
@@ -59,8 +53,7 @@ function display_background_element() {
 	<?php
 }
 
-function display_favicon_element() {
-	?>
+function display_favicon_element() { ?>
 	<div class='image-preview-wrapper'>
 		<img id='favicon-preview' src='<?php echo wp_get_attachment_url(get_option('favicon_option')); ?>' height='100'>
 	</div>
@@ -69,13 +62,7 @@ function display_favicon_element() {
 	<?php
 }
 
-function display_home_text_element() {
-	?>
+function display_home_text_element() { ?>
 	<input type="text" name="home_text_option" value="<?php echo get_option('home_text_option'); ?>" />
 	<?php
-}
-
-function media_selector_scripts() {
-	$url = get_bloginfo('template_directory') . '/js/media-lib-uploader.js';
-	echo '"<script type="text/javascript" src="' . $url . '"></script>"';
 }
