@@ -2,7 +2,6 @@
 
 add_action('admin_menu', 'add_theme_options_menu');
 add_action('admin_init', 'display_theme_options_fields');
-add_action('admin_footer', 'media_selector_scripts');
 
 function add_theme_options_menu() {
 	add_menu_page("Theme Options", "Theme Options", "manage_options", "theme_options", "theme_settings_page");
